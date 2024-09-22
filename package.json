@@ -4,7 +4,8 @@
   "description": "Photo Blog  App",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
   },
   "homepage": "https://github.com/ozanmrt/photo-blog#readme",
   "devDependencies": {
+    "nodemon": "^3.1.7",
     "prettier": "3.3.3"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   }
 }
