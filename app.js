@@ -21,6 +21,12 @@ app.get('/', async (req, res) => {
   res.render('index', { photos });
 });
 
+app.get('/photos/:id', async (req, res) => {
+  //res.render('about');
+  const photo = await Photo.findById(req.params.id);
+  res.render('photo',{photo});
+});
+
 app.get('/about', (req, res) => {
   res.render('about');
 });
@@ -34,12 +40,10 @@ app.post('/photos', async (req, res) => {
   res.redirect('/');
 });
 
-
 // 404 - Bilinmeyen sayfa için middleware
 app.use((req, res) => {
   res.status(404).send('HATA'); // Bilinmeyen bir sayfa istenirse bu çalışır
 });
-
 
 const port = 3000;
 
