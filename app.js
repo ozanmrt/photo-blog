@@ -5,11 +5,30 @@ const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
 const methodOverride = require('method-override');
-const { getAllPhotos, getPhoto, createPhoto, updatePhoto, deletePhoto } = require('./controllers/photoControllers');
-const { getAboutPage, getAddPage, getEditPage } = require('./controllers/pageControllers');
+const {
+  getAllPhotos,
+  getPhoto,
+  createPhoto,
+  updatePhoto,
+  deletePhoto,
+} = require('./controllers/photoControllers');
+const {
+  getAboutPage,
+  getAddPage,
+  getEditPage,
+} = require('./controllers/pageControllers');
+
+
 
 // connect DB
-mongoose.connect('mongodb://localhost/pcat-test-db');
+mongoose
+  .connect('mongodb://localhost/pcat-test-db')
+  .then(() => {
+    console.log('CONNECTED DB');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const app = express();
 
