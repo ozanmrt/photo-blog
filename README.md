@@ -24,11 +24,11 @@ In this project, I developed a dynamic and database-supported web application us
 
 ## 📂 How to use?
 
-### Clone Repo;
+### Clone Repo:
 ```
 git clone https://github.com/ozanmrt/photo-blog.git
 ```
-### Usage;
+### Usage:
 ```
 npm install
 ```
